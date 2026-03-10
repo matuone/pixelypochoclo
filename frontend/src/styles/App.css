@@ -34,19 +34,77 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: none;
+  border-bottom: 1px solid var(--line);
   padding: 0.45rem 1.2rem;
-  background: transparent;
+  background: #ffffff;
   backdrop-filter: none;
   overflow: visible;
 }
 
 .app-header-bar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
   min-height: 44px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Desktop nav (horizontal bar) ── */
+.nav-desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .app-header-bar {
+    justify-content: center;
+  }
+
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-desktop a+a::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 1em;
+    background: var(--line);
+    margin-right: 0.75rem;
+    vertical-align: middle;
+  }
+
+  .header-actions {
+    position: absolute;
+    right: 1.2rem;
+  }
+
+  .nav-desktop a {
+    color: #5a3f4e;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    margin: 0 0.35rem;
+    border-radius: 4px;
+    font-size: 1.15rem;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .nav-desktop a:hover {
+    background: rgba(242, 220, 232, 0.55);
+  }
+
+  /* Hide hamburger on desktop */
+  .menu-toggle-btn {
+    display: none !important;
+  }
 }
 
 .floating-brand {
