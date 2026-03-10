@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 :root {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bg-bone: #f9f3eb;
+  --bg-rose: #f3cade;
+  --ink: #2f232a;
+  --line: rgba(58, 38, 49, 0.14);
+  --surface: rgba(255, 255, 255, 0.55);
+  font-family: 'Special Elite', 'Courier New', Courier, monospace;
   line-height: 1.5;
   font-weight: 400;
-  color: #ffe7ef;
-  background: #f7f0e8;
+  color: var(--ink);
+  background: var(--bg-bone);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

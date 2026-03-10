@@ -14,34 +14,80 @@
 
 .dynamic-bg-layer {
   position: absolute;
-  inset: -15%;
-  background-size: 220% 220%;
-  filter: saturate(108%);
+  inset: -12%;
+  background-size: 180% 180%;
+  filter: saturate(102%);
 }
 
 .dynamic-bg-layer-one {
-  background-image: linear-gradient(125deg, #f7f0e8 0%, #f8e9ee 45%, #f3c7dd 75%, #eeb7d5 100%);
+  background-image: linear-gradient(125deg, var(--bg-bone) 0%, #f8e9ee 48%, var(--bg-rose) 100%);
 }
 
 .dynamic-bg-layer-two {
-  background-image: radial-gradient(circle at 18% 30%, rgba(244, 206, 224, 0.35) 0%, rgba(244, 206, 224, 0) 56%),
-    radial-gradient(circle at 82% 72%, rgba(239, 190, 217, 0.32) 0%, rgba(239, 190, 217, 0) 58%),
-    radial-gradient(circle at 50% 48%, rgba(250, 233, 240, 0.4) 0%, rgba(250, 233, 240, 0) 64%);
-  mix-blend-mode: screen;
-  opacity: 0.75;
+  background-image: radial-gradient(circle at 22% 28%, rgba(246, 214, 229, 0.2) 0%, rgba(246, 214, 229, 0) 58%),
+    radial-gradient(circle at 78% 70%, rgba(236, 189, 214, 0.2) 0%, rgba(236, 189, 214, 0) 60%);
+  mix-blend-mode: normal;
+  opacity: 0.6;
 }
 
 .app-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
   padding: 0.85rem 1.2rem;
-  background: rgba(15, 9, 12, 0.68);
-  backdrop-filter: blur(8px);
+  background: rgba(249, 243, 235, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+.app-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .brand {
-  color: #ffd2e2;
+  color: var(--ink);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.menu-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 4px;
+  color: var(--ink);
+  padding: 0.1rem 0.35rem;
+}
+
+.nav-dropdown {
+  position: absolute;
+  right: 1.2rem;
+  top: calc(100% + 0.45rem);
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  background: rgba(249, 243, 235, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.55rem;
+  box-shadow: 0 8px 20px rgba(89, 63, 78, 0.12);
+}
+
+.nav-dropdown a {
+  color: #5a3f4e;
+  text-decoration: none;
+  padding: 0.35rem 0.45rem;
+  border-radius: 4px;
+}
+
+.nav-dropdown a:hover {
+  background: rgba(242, 220, 232, 0.55);
 }
 
 .page-container {
@@ -51,40 +97,52 @@
 }
 
 .hero {
-  background: rgba(14, 10, 12, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   padding: 1.5rem;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 8px 20px rgba(121, 95, 109, 0.08);
+}
+
+.hero-section {
+  margin-top: 1rem;
 }
 
 .hero h1 {
   margin: 0 0 0.75rem;
-  color: #f6b8d2;
+  color: #4a2f3d;
+  font-weight: 400;
 }
 
 .hero p {
   margin: 0;
-  color: #f6d8e4;
+  color: #5a3f4e;
 }
 
 .button-link {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 0.9rem;
-  border-radius: 8px;
-  background: linear-gradient(120deg, #d10b34 0%, #e11d48 55%, #ec4899 100%);
-  color: #ffffff;
+  border: 1px solid #b98ba3;
+  border-radius: 4px;
+  background: #f5d8e7;
+  color: #4a2f3d;
   text-decoration: none;
 }
 
 .button-link:hover {
-  filter: brightness(1.08);
+  background: #f1cde0;
 }
 
 @media (max-width: 768px) {
   .dynamic-bg-layer {
     inset: -25%;
+  }
+
+  .nav-dropdown {
+    right: 0.8rem;
+    left: 0.8rem;
+    min-width: auto;
   }
 }
