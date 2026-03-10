@@ -20,12 +20,12 @@
 }
 
 .dynamic-bg-layer-one {
-  background-image: linear-gradient(125deg, var(--bg-bone) 0%, #f8e9ee 48%, var(--bg-rose) 100%);
+  background-image: linear-gradient(125deg, var(--bg-bone) 0%, #f8e8e3 48%, var(--bg-rose) 100%);
 }
 
 .dynamic-bg-layer-two {
-  background-image: radial-gradient(circle at 22% 28%, rgba(246, 214, 229, 0.2) 0%, rgba(246, 214, 229, 0) 58%),
-    radial-gradient(circle at 78% 70%, rgba(236, 189, 214, 0.2) 0%, rgba(236, 189, 214, 0) 60%);
+  background-image: radial-gradient(circle at 22% 28%, rgba(244, 205, 196, 0.22) 0%, rgba(244, 205, 196, 0) 58%),
+    radial-gradient(circle at 78% 70%, rgba(236, 181, 168, 0.2) 0%, rgba(236, 181, 168, 0) 60%);
   mix-blend-mode: normal;
   opacity: 0.6;
 }
@@ -34,24 +34,83 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--line);
-  padding: 0.85rem 1.2rem;
-  background: rgba(249, 243, 235, 0.68);
-  backdrop-filter: blur(3px);
+  border-bottom: none;
+  padding: 0.45rem 1.2rem;
+  background: transparent;
+  backdrop-filter: none;
+  overflow: visible;
 }
 
 .app-header-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
+  min-height: 44px;
 }
 
-.brand {
-  color: var(--ink);
+.floating-brand {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  z-index: 12;
+}
+
+.floating-brand-logo {
+  display: block;
+  height: clamp(116px, 12vw, 176px);
+  width: auto;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.search-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 4px;
+  color: var(--ink);
+  padding: 0.1rem 0.35rem;
+  cursor: pointer;
+}
+
+.search-input {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  color: var(--ink);
+  font-family: 'Special Elite', 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  width: 0;
+  animation: expandSearch 0.3s ease-out forwards;
+  outline: none;
+}
+
+@keyframes expandSearch {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 160px;
+    opacity: 1;
+  }
+}
+
+.search-input::placeholder {
+  color: #a8919b;
 }
 
 .menu-toggle-btn {
@@ -63,6 +122,7 @@
   border-radius: 4px;
   color: var(--ink);
   padding: 0.1rem 0.35rem;
+  z-index: 3;
 }
 
 .nav-dropdown {
@@ -140,9 +200,34 @@
     inset: -25%;
   }
 
+  .floating-brand-logo {
+    height: clamp(96px, 30vw, 142px);
+  }
+
+  .floating-brand {
+    top: 14px;
+    left: 12px;
+  }
+
   .nav-dropdown {
     right: 0.8rem;
     left: 0.8rem;
     min-width: auto;
+  }
+
+  .search-input {
+    animation: expandSearchMobile 0.3s ease-out forwards;
+  }
+
+  @keyframes expandSearchMobile {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+
+    to {
+      width: 120px;
+      opacity: 1;
+    }
   }
 }

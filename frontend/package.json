@@ -12,6 +12,7 @@
   "dependencies": {
     "framer-motion": "^12.35.2",
     "hamburger-react": "^2.5.2",
+    "lucide-react": "^0.577.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.13.1"
