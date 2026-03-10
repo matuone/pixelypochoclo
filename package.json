@@ -4,7 +4,7 @@
   "description": "Web de análisis, opiniones y podcasts sobre videojuegos y películas",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "dev": "concurrently -n backend,frontend -c green,cyan \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
     "start": "npm --prefix backend start",
     "seed": "npm --prefix backend run seed",
     "build": "npm --prefix frontend run build",

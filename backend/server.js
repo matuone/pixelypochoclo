@@ -53,5 +53,5 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Servidor ejecutándose en puerto ${PORT}`);
+  console.log(`\x1b[32m✔ Backend corriendo en http://localhost:${PORT}\x1b[0m`);
 });
