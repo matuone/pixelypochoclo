@@ -16,32 +16,31 @@ net start MongoDB
 docker run -d -p 27017:27017 --name mongodb mongo:latest
 ```
 
-### 2. Backend
+### 2. Instalar dependencias
 
 ```bash
-cd backend
 npm install
-npm run dev
+cd backend && npm install
+cd ../frontend && npm install
+cd ..
 ```
 
-### 3. Cargar Datos de Ejemplo
+### 3. Cargar datos de ejemplo
 
-En otra terminal:
 ```bash
-cd backend
 npm run seed
 ```
 
-### 4. Frontend
+### 4. Iniciar Backend + Frontend
 
-En otra terminal:
+**Una sola terminal:**
 ```bash
-cd frontend
-npm install
 npm run dev
 ```
 
-✅ Listo! Abre [http://localhost:5173](http://localhost:5173)
+✅ Listo! Se abrirán automáticamente:
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend API: [http://localhost:5000/api](http://localhost:5000/api)
 
 ## 🚀 Requisitos
 
@@ -51,6 +50,14 @@ npm run dev
 
 ## 📦 Instalación Completa
 
+### Clonar y preparar
+
+```bash
+git clone <tu-repo>
+cd pixelypochoclo
+npm install
+```
+
 ### Backend
 
 ```bash
@@ -58,7 +65,7 @@ cd backend
 npm install
 ```
 
-Configurar `.env` con tu instancia de MongoDB:
+Configurar `.env`:
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/pixelypochoclo
@@ -66,34 +73,31 @@ NODE_ENV=development
 FRONTEND_URL=http://localhost:5173
 ```
 
-Iniciar el servidor:
-```bash
-npm run dev  # Development con nodemon
-npm start    # Producción
-```
-
-Cargar datos de ejemplo:
-```bash
-npm run seed
-```
-
-El API estará en `http://localhost:5000/api`
-
 ### Frontend
 
 ```bash
-cd frontend
+cd ../frontend
 npm install
 ```
 
-El archivo `.env` ya está configurado con `VITE_API_BASE_URL=http://localhost:5000/api`
+El archivo `.env` ya está configurado.
 
-Iniciar el desarrollo:
+### Cargar datos de ejemplo
+
+```bash
+cd ..
+npm run seed
+```
+
+### Iniciar ambos servidores
+
 ```bash
 npm run dev
 ```
 
-La aplicación estará en `http://localhost:5173`
+El comando anterior iniciará:
+- **Backend**: http://localhost:5000/api
+- **Frontend**: http://localhost:5173
 
 ## 🎯 Características
 
