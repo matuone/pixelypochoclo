@@ -2,13 +2,54 @@
 
 Web de análisis, opiniones y podcasts sobre videojuegos y películas, con panel de administración para gestionar artículos.
 
+## ⚡ Inicio Rápido
+
+### 1. MongoDB (primero)
+
+Asegúrate de tener MongoDB ejecutándose en tu máquina:
+
+```bash
+# En Windows (si está instalado como servicio)
+net start MongoDB
+
+# O si tienes Docker:
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+```
+
+### 2. Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 3. Cargar Datos de Ejemplo
+
+En otra terminal:
+```bash
+cd backend
+npm run seed
+```
+
+### 4. Frontend
+
+En otra terminal:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+✅ Listo! Abre [http://localhost:5173](http://localhost:5173)
+
 ## 🚀 Requisitos
 
 - Node.js 16+
 - npm o yarn
 - MongoDB (local o Atlas)
 
-## 📦 Instalación
+## 📦 Instalación Completa
 
 ### Backend
 
@@ -29,6 +70,11 @@ Iniciar el servidor:
 ```bash
 npm run dev  # Development con nodemon
 npm start    # Producción
+```
+
+Cargar datos de ejemplo:
+```bash
+npm run seed
 ```
 
 El API estará en `http://localhost:5000/api`
@@ -53,10 +99,11 @@ La aplicación estará en `http://localhost:5173`
 
 ### Frontend
 - 📸 Grid de artículos con imágenes
-- 🔍 Página de detalle de artículo
+- 🔍 Página de detalle de artículo (por slug)
 - 📱 Diseño responsive
 - ✨ Animaciones y transiciones suaves
 - 🎨 Diseño minimalista con colores personalizados
+
 
 ### Backend API
 - `GET /api/articles` - Obtener todos los artículos (con paginación y filtros)
