@@ -25,7 +25,7 @@ export default function MainLayout() {
               aria-label="Abrir busqueda"
               onClick={() => setIsSearchOpen((prev) => !prev)}
             >
-              <Search size={18} />
+              <Search size={24} />
             </button>
             {isSearchOpen && (
               <input

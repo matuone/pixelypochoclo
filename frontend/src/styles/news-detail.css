@@ -1,0 +1,153 @@
+.link-volver {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #5a3f4e;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.link-volver:hover {
+  color: #3f2b37;
+}
+
+.noticia-detalle {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.noticia-detalle-header {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.noticia-detalle h1 {
+  margin: 0 0 1rem;
+  color: #4a2f3d;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.noticia-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #5a3f4e;
+  font-size: 0.9rem;
+}
+
+.noticia-meta .noticia-fecha {
+  position: static;
+  background: transparent;
+  color: #5a3f4e;
+  padding: 0;
+  border-radius: 0;
+}
+
+.noticia-meta .noticia-categoria {
+  background: #f5d8e7;
+  color: #4a2f3d;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.noticia-imagen-grande {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.noticia-cuerpo {
+  color: #5a3f4e;
+}
+
+.noticia-descripcion {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+  color: #4a2f3d;
+  line-height: 1.6;
+}
+
+.noticia-texto {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.noticia-texto p {
+  margin: 0 0 1.2rem;
+}
+
+.noticia-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.noticia-noEncontrada {
+  text-align: center;
+  padding: 2rem;
+}
+
+.noticia-noEncontrada h1 {
+  color: #4a2f3d;
+  margin-bottom: 1.5rem;
+}
+
+.noticia-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .noticia-detalle {
+    padding: 1.5rem;
+  }
+
+  .noticia-detalle h1 {
+    font-size: 1.6rem;
+  }
+
+  .noticia-imagen-grande {
+    margin-bottom: 1.5rem;
+  }
+
+  .noticia-descripcion {
+    font-size: 1rem;
+  }
+
+  .noticia-texto {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .noticia-detalle {
+    padding: 1rem;
+  }
+
+  .noticia-detalle-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .noticia-detalle h1 {
+    font-size: 1.3rem;
+  }
+
+  .noticia-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

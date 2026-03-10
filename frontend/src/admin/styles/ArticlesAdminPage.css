@@ -1,0 +1,260 @@
+.articles-admin-page {
+  width: 100%;
+}
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-page-header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.75rem;
+}
+
+.btn-create {
+  background: var(--ink);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Special Elite', Courier, monospace;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.btn-create:hover {
+  background: rgba(47, 35, 42, 0.85);
+}
+
+.page-error {
+  background: #ffebee;
+  border: 1px solid #ef5350;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(249, 243, 235, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.empty-state p {
+  color: var(--ink);
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.articles-table-container {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+}
+
+.articles-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.articles-table th {
+  background: var(--surface);
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.articles-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.articles-table tbody tr:hover {
+  background: rgba(249, 243, 235, 0.3);
+}
+
+.table-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.article-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.badge-featured {
+  background: #fff9e6;
+  color: #f57f17;
+}
+
+.category-analisis {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.category-opinion {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.category-podcast {
+  background: #e0f2f1;
+  color: #00796b;
+}
+
+.status-published {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.status-draft {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-edit,
+.btn-delete {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+  transform: scale(1.15);
+}
+
+.btn-delete:hover {
+  transform: scale(1.15);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--ink);
+}
+
+.modal p {
+  margin: 0 0 1.5rem 0;
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-cancel,
+.btn-delete-modal {
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  font-family: 'Special Elite', Courier, monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-cancel:hover {
+  background: var(--surface);
+}
+
+.btn-delete-modal {
+  background: #c62828;
+  color: white;
+  border: none;
+}
+
+.btn-delete-modal:hover {
+  background: #b71c1c;
+}
+
+@media (max-width: 768px) {
+  .admin-page-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .articles-table {
+    font-size: 0.85rem;
+  }
+
+  .articles-table th,
+  .articles-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .table-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
