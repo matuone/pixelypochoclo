@@ -1,15 +1,45 @@
 .app-shell {
+  position: relative;
+  isolation: isolate;
   min-height: 100dvh;
 }
 
+.dynamic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dynamic-bg-layer {
+  position: absolute;
+  inset: -15%;
+  background-size: 220% 220%;
+  filter: saturate(125%);
+}
+
+.dynamic-bg-layer-one {
+  background-image: linear-gradient(125deg, #0a0406 0%, #3a0614 30%, #8d0e2f 62%, #d88ab1 100%);
+}
+
+.dynamic-bg-layer-two {
+  background-image: radial-gradient(circle at 15% 26%, rgba(255, 24, 74, 0.55) 0%, rgba(255, 24, 74, 0) 54%),
+    radial-gradient(circle at 84% 74%, rgba(228, 163, 197, 0.42) 0%, rgba(228, 163, 197, 0) 56%),
+    radial-gradient(circle at 52% 48%, rgba(236, 188, 212, 0.34) 0%, rgba(236, 188, 212, 0) 62%);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
 .app-header {
-  border-bottom: 1px solid #e6e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   padding: 0.85rem 1.2rem;
-  background: #ffffff;
+  background: rgba(15, 9, 12, 0.68);
+  backdrop-filter: blur(8px);
 }
 
 .brand {
-  color: #1f2937;
+  color: #ffd2e2;
   text-decoration: none;
   font-weight: 700;
 }
@@ -21,19 +51,22 @@
 }
 
 .hero {
-  background: #ffffff;
-  border: 1px solid #e6e7eb;
+  background: rgba(14, 10, 12, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 1.5rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
 }
 
 .hero h1 {
   margin: 0 0 0.75rem;
+  color: #fff0f7;
 }
 
 .hero p {
   margin: 0;
-  color: #374151;
+  color: #f6d8e4;
 }
 
 .button-link {
@@ -41,7 +74,17 @@
   margin-top: 1rem;
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
-  background: #111827;
+  background: linear-gradient(120deg, #d10b34 0%, #e11d48 55%, #ec4899 100%);
   color: #ffffff;
   text-decoration: none;
+}
+
+.button-link:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 768px) {
+  .dynamic-bg-layer {
+    inset: -25%;
+  }
 }
